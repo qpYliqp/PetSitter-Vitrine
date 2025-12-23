@@ -1,0 +1,60 @@
+﻿---
+import Illusatrion from "./shared/Illusatrion.astro";
+import CertificationBadge from "./shared/CertificationBadge.astro";
+import Button from "./shared/Button.astro";
+import { Icon } from 'astro-icon/components'
+---
+<section
+	id="home"
+	class=" py-10 md:py-40 relative">
+	<div class="container px-4 mx-auto">
+		<div class="grid md:grid-cols-2 gap-12 items-center">
+			<div class="flex-col items-center md:items-start flex gap-8 text-center md:text-start">
+				<CertificationBadge
+					text="Certifiée par l'ACACED"
+					iconName="certified-diploma"></CertificationBadge>
+				<h1 class="text-4xl md:text-5xl lg:text-6xl">
+					Votre animal de compagnie entre de
+					<span class="text-third">bonnes mains</span>
+				</h1>
+				<p class="text-muted-foreground">Je prends soin de vos animaux avec amour et attention pendant vos absences.</p>
+        <p class="text-muted-foreground">J'accueille vos animaux dans le cadre verdoyant de ma maison de campagne située en Dordogne. Partez l'esprit tranquille : je m'occupe d'eux avec soin en respectant scrupuleusement leurs habitudes et vos consignes.</p>
+				<div class="flex items-center gap-5 text-sm md:text-md">
+					<Button buttonText="Contactez-moi"></Button>
+					<div class="h-fit">
+					<CertificationBadge
+						text="Star Sitter sur Rover"
+						iconName="star"></CertificationBadge>
+					</div>
+				</div>
+				<div class="flex flex-row **items-center** justify-center md:justify-start w-full text-center md:text-start gap-3 md:gap-8 pt-4">
+
+					<div class="flex flex-col w-1/2 lg:w-fit md:items-start">
+						<div class="flex border-t items-center justify-center md:justify-start border-secondary">
+							<Icon name="star" class="w-4 h-4 text-third"></Icon>
+							<Icon name="star" class="w-4 h-4 text-third"></Icon>
+							<Icon name="star" class="w-4 h-4 text-third"></Icon>
+							<Icon name="star" class="w-4 h-4 text-third"></Icon>
+							<Icon name="star" class="w-4 h-4 text-third"></Icon>
+						</div>
+						<p class="text-sm text-muted-foreground">Plus de <span class="text-third">30 clients satisfaits</span></p>
+					</div>
+
+					<div class="h-12 w-px bg-third"></div>
+
+					<div class="flex flex-col w-1/2 lg:w-fit  md:items-start">
+						<div class="flex border-t gap-2 items-center justify-center md:justify-start border-secondary">
+							<Icon name="heart" class="w-4 h-4 text-third"></Icon>
+							<Icon name="heart" class="w-4 h-4 text-third"></Icon>
+							<Icon name="heart" class="w-4 h-4 text-third"></Icon>
+						</div>
+						<p class="text-sm text-muted-foreground">Animaux <span class="text-third">100% heureux</span></p>
+					</div>
+				</div>
+			</div>
+			<div class="relative">
+				<Illusatrion imageUrl="/illustrations/kenzo1.jpg"></Illusatrion>
+			</div>
+		</div>
+	</div>
+</section>

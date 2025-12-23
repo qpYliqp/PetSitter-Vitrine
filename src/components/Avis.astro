@@ -1,0 +1,50 @@
+---
+import AvisCard from "./shared/AvisCard.astro";
+import Vignette from "./shared/Vignette.astro";
+const photos = [
+  { src: "/illustrations/vignettes/dog-bird1.jpg", alt: "Photo 1", rot: -2 },
+  { src: "/illustrations/vignettes/dog1.jpg", alt: "Photo 2", rot: 1.5 },
+  { src: "/illustrations/vignettes/dog2.jpg", alt: "Photo 3", rot: -1 },
+  { src: "/illustrations/vignettes/dog-sitter1.jpg", alt: "Photo 1", rot: 3.5 },
+  { src: "/illustrations/vignettes/dog3.jpg", alt: "Photo 2", rot: -3 },
+  { src: "/illustrations/vignettes/dog4.jpg", alt: "Photo 3", rot: 1 },
+  { src: "/illustrations/vignettes/bird1.jpg", alt: "Photo 1", rot: -2.5 },
+  { src: "/illustrations/vignettes/dog-sitter2.jpg", alt: "Photo 2", rot: 4 },
+  { src: "/illustrations/vignettes/dog5.jpg", alt: "Photo 3", rot: -1.5 },
+];
+---
+<section id="petphoto">
+  <div class="container mx-auto px-4 py-10">
+    <div class="text-center mb-12 max-w-2xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        Ce que <span class="text-third">les clients</span> pensent de moi
+      </h2>
+      <p class="text-lg text-muted-foreground leading-relaxed">
+        Voici quelques retours des personnes qui m'ont fait confiance : 
+      </p>
+    </div>
+
+   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <AvisCard 
+        title="Bonne petsitter" 
+        description="Sandrine s'est bien occupée de notre chienne et qui a donné de ses nouvelles chaques jour avec un petit commentaire et des photos et vidéos."
+        author="Evelyne"
+      />
+
+      <AvisCard 
+        title="Très satisfaite" 
+        description="J'ai confié ma chienne Vicky à Sandrine pour la journée et tout s'est parfaitement bien passé ! Elle a été très arrangeante, réactive et vraiment attentionnée. J'ai eu des nouvelles et une photo pendant la garde, ce qui m'a tout de suite rassurée. Vicky avait l'air heureuse et détendue à son retour, ce qui en dit long. Je recommande Sandrine pour garder vos animaux"
+        author="Lydie N."
+      />
+
+      <AvisCard 
+        title="Je recommande vivement ! " 
+        description="Nous avons laissé notre toutout, qui est terriblement attaché à notre foyer et à horreur de la solitude, à qui il a trouvé en Sandrine beaucoup d'affection et d'amour. Il s'est très vite senti en confiance et nous est revenu heureux. Merci Sandrine."
+        author="Florian D."
+      />
+      
+    </div>
+    
+  </div>
+</section>

@@ -1,0 +1,11 @@
+﻿---
+interface Props
+{
+    imageUrl : string,
+}
+
+const {imageUrl} = Astro.props;
+---
+<div class="relative rounded-3xl overflow-hidden shadow-2xl">
+    <img class="w-full h-full object-cover" src={imageUrl}/>
+</div>

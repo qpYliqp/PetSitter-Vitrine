@@ -1,0 +1,17 @@
+﻿---
+interface Props
+{
+  buttonText: string;
+  iconPath? : string;
+}
+const {buttonText, iconPath} = Astro.props;
+---
+<div class="
+  w-fit
+  transition duration-300 ease-in-out
+  shadow-lg
+  hover:shadow-xl
+  hover:scale-[1.01]
+  rounded-2xl bg-third text-white">
+    <button class=" px-5 py-5  w-full h-full hover:cursor-pointer">{buttonText}</button>
+</div>

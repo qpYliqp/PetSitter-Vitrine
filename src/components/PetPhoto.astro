@@ -1,0 +1,42 @@
+﻿---
+import Vignette from "./shared/Vignette.astro";
+const photos = [
+  { src: "/illustrations/vignettes/dog-bird1.jpg", alt: "Photo 1", rot: -2 },
+  { src: "/illustrations/vignettes/dog1.jpg", alt: "Photo 2", rot: 1.5 },
+  { src: "/illustrations/vignettes/dog2.jpg", alt: "Photo 3", rot: -1 },
+  { src: "/illustrations/vignettes/dog-sitter1.jpg", alt: "Photo 1", rot: 3.5 },
+  { src: "/illustrations/vignettes/dog3.jpg", alt: "Photo 2", rot: -3 },
+  { src: "/illustrations/vignettes/dog4.jpg", alt: "Photo 3", rot: 1 },
+  { src: "/illustrations/vignettes/bird1.jpg", alt: "Photo 1", rot: -2.5 },
+  { src: "/illustrations/vignettes/dog-sitter2.jpg", alt: "Photo 2", rot: 4 },
+  { src: "/illustrations/vignettes/dog5.jpg", alt: "Photo 3", rot: -1.5 },
+];
+---
+<section id="petphoto">
+  <div class="container mx-auto px-4 py-10">
+    <div class="text-center mb-12 max-w-2xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        Des nouvelles <span class="text-third">en images</span>
+      </h2>
+      <p class="text-lg text-muted-foreground leading-relaxed">
+        Parce que je sais qu'ils vous manquent, je capture leurs moments de vie et de jeu.
+        Recevez régulièrement des photos de vos compagnons pour avoir l'esprit tranquille
+        et l'assurance qu'ils sont choyés en votre absence.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-8 gap-y-12 p-10 justify-items-center">
+      {photos.map((p, index) => (
+        <div
+          key={index}
+          class={index >= 5 ? "hidden md:block" : "block"}
+        >
+          <Vignette
+            imageUrl={p.src}
+            alt={p.alt}
+            rotation={p.rot}
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

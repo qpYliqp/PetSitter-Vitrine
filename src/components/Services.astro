@@ -1,0 +1,50 @@
+﻿---
+import ServiceCard from "./shared/ServiceCard.astro";
+---
+<section id="services">
+  <div class="container mx-auto px-4 py-10">
+    <div class="text-center mx-auto mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Mes <span class="text-third">Services</span></h2>
+      <p class="text-muted-foreground text-lg">Des prestations adaptées aux besoins de votre animal de companie</p>
+    </div>
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+  <ServiceCard
+    title="Alimentation & Nutrition"
+    iconName="gamelle"
+    description="Le respect du régime alimentaire est une priorité que je prends au sérieux. Que ce soit pour un régime médical ou ses préférences quotidiennes, je veille à ce qu'il reçoive ce dont il a besoin pour rester en pleine forme durant son séjour."
+    arguments={[
+      "Respect des dosages",
+      "Respect des horaires",
+      "Respect du type de nourriture"]}
+  />
+    <ServiceCard
+      title="Garde"
+      iconName="paw"
+      description="J'accueille chaleureusement votre animal au sein de mon foyer pour qu'il ne se sente jamais seul. Il profitera d'un cadre familial, confortable et apaisant, loin du stress des chenils traditionnels, où il sera choyé et aimé comme s'il était à la maison."
+      arguments={[
+      "Garde 24h/24 - 7j/7",
+      "Câlins et amour pour vos compagnons",
+      "Des nouvelles & photos quotidiennes",
+      ]}
+    />
+    <ServiceCard
+      title="Activités sportives"
+      iconName="sport"
+      description="L'exercice est essentiel pour votre animal. Je propose des programmes variés et ludiques, adaptés à son niveau d'énergie. Entre jeux stimulants, je m'assure qu'il se dépense sainement tout en partageant des moments de complicité et de jeu."
+      arguments={[
+        "Lancers de balle et Frisbee",
+        "Randonnées en forêt ou parcs",
+        "Jeux stimulants"]}
+    />
+    <ServiceCard
+      title="Sécurité & Sérénité"
+      iconName="heart"
+      description="Votre animal en sécurité. Mon terrain est aménagé pour offrir le grand air de la campagne avec une protection optimale. Votre compagnon pourra gambader librement dans un espace clos et surveillé en permanence, loin de la route et de l'agitation urbaine"
+      arguments={[
+        "Jardin entièrement clos et sécurisé.",
+        "Sorties sous surveillance vigilante.",
+        "Environnement calme, loin du bruit de la ville."]}
+    />
+  </div>
+  </div>
+</section>

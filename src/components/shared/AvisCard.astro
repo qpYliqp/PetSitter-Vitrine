@@ -1,0 +1,40 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  title: string;
+  description: string;
+  author?: string;
+}
+
+const { title, description, author = "Client heureux" } = Astro.props;
+---
+
+<div class="group relative bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col gap-4 h-full">
+  
+  <div class="absolute top-4 right-4 opacity-10 text-gray-400">
+    <Icon name="mdi:format-quote-close" class="size-10" />
+  </div>
+
+  <div class="flex text-yellow-400 gap-0.5">
+    {Array.from({ length: 5 }).map(() => (
+      <Icon name="star" class="size-5" />
+    ))}
+  </div>
+
+  <div class="flex-1">
+    <h3 class="text-lg font-bold text-gray-800 mb-2 font-heading">
+      {title}
+    </h3>
+    <p class="text-gray-600 leading-relaxed text-sm">
+      {description}
+    </p>
+  </div>
+
+  <div class="border-t border-gray-100 pt-4 flex items-center gap-3">
+    <div class="bg-secondary text-third rounded-full w-8 h-8 flex items-center justify-center font-bold text-xs">
+      {author.charAt(0)}
+    </div>
+    <span class="text-sm font-medium ">{author}</span>
+  </div>
+</div>

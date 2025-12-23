@@ -1,0 +1,37 @@
+﻿---
+import Illusatrion from "./shared/Illusatrion.astro";
+import CertificationBadge from "./shared/CertificationBadge.astro";
+import Button from "./shared/Button.astro";
+import { Icon } from 'astro-icon/components'
+import ArgumentBadge from "./shared/ArgumentBadge.astro";
+import BlobIllustration from "./shared/BlobIllustration.astro";
+import AliveBlobIllustration from "./shared/AliveBlobIllustration.astro";
+---
+<section
+  id="environement"
+  class="py-10 md:py-32 relative">
+  <div class="container px-4 mx-auto">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      
+      <div class="relative order-last lg:order-none">
+        <AliveBlobIllustration imageUrl="/illustrations/jardin1.jpg"></AliveBlobIllustration>
+      </div>
+
+      <div class="text-center mb-12 max-w-2xl mx-auto md:text-left">
+        <h2 class="text-3xl md:text-4xl font-bold md:mb-5">
+          <span class="text-third">Un environement idéal</span> pour vos animaux
+        </h2>
+        <p class="text-lg lg:block hidden mb-5 text-muted-foreground leading-relaxed">Parce que le bien-être de votre animal passe avant tout par son environnement, je les accueille dans une maison familiale avec un accès direct à un grand jardin privé. Ici, pas de box ni de cage : votre compagnon profite du grand air, peut se dégourdir les pattes à volonté ou faire la sieste à l'ombre du parasol, le tout dans un espace entièrement sécurisé et clôturé. C'est comme à la maison, mais en vacances !
+        </p>
+
+        <div class="hidden lg:block space-y-4 w-full"> 
+            <ArgumentBadge title="Jardin 100% Clos" iconName="heart" description="Un espace extérieur entièrement sécurisé pour gambader sans risque."></ArgumentBadge>
+            <ArgumentBadge title="Hygiène & Propreté" iconName="heart" description="Un espace extérieur entretenu quotidiennement pour leur santé."></ArgumentBadge>
+            <ArgumentBadge title="Accès à la carte" iconName="heart" description="Votre animal choisit librement s'il préfère le canapé ou le jardin tout en restant sous surveillance."></ArgumentBadge>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
