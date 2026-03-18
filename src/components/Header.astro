@@ -3,33 +3,123 @@ const pathname = Astro.url.pathname;
 // Remove any trailing slash to compare safely (except for root path)
 const currentPath = pathname === "/" ? pathname : pathname.replace(/\/$/, "");
 ---
-<header class="border-third border-b flex justify-between items-center px-6 py-3 fixed top-0 z-50 w-full shadow-sm backdrop-blur-md bg-secondary/90">
-  <!-- Titre gauche -->
-  <a href="/" class="text-xl font-extrabold tracking-tight text-primary">
-    Pet<span class="text-third">Sitter 24</span>
-  </a>
 
-  <nav class="hidden md:flex gap-8 font-medium items-center mr-4 text-black">
-    <a href="/#home" class={`hover:text-third transition-colors ${currentPath === '/' ? 'text-third font-bold' : ''}`}>Accueil</a>
-    
-    <a href="/galerie" class={`hover:text-third transition-colors relative group py-1 ${currentPath === '/galerie' ? 'text-third font-bold' : ''}`}>
-      Galerie
-      <span class={`absolute bottom-0 left-0 h-0.5 bg-third transition-all duration-300 ${currentPath === '/galerie' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+<!-- Header en haut (Desktop complet + Mobile juste Logo) -->
+<header id="main-header" class="fixed top-0 z-50 w-full transition-all duration-300 ease-in-out px-4 md:px-6 py-4 md:py-5 bg-transparent text-font-primary">
+  <div class="max-w-7xl mx-auto flex justify-between items-center gap-3 md:gap-0">
+    <!-- Titre gauche / Logo -->
+    <a href="/" class="flex items-center gap-2 md:gap-3 group">
+      <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-third flex items-center justify-center text-white shadow-md group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+        <!-- Icône Pet -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M7 6c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3zm5.798 1.488c.983-1.332 2.768-1.745 3.987-.923 1.22.822 1.411 2.568.428 3.9-1.042 1.41-2.906 1.83-4.125 1.008-1.22-.822-1.332-2.653-.29-3.985zm-11.596-.923c1.22-.822 3.004-.409 3.987.923 1.042 1.332.93 3.163-.29 3.985-1.219.822-3.083.402-4.125-1.008-.983-1.332-.792-3.078.428-3.9zm3.561 7.424c.789-2.342 3.064-4.256 5.864-4.341 2.809.083 5.088 1.996 5.88 4.341 1.096 3.243-.727 6.643-3.66 7.636-1.392.47-3.056.47-4.448 0-2.933-.993-4.756-4.393-3.636-7.636z"/>
+        </svg>
+      </div>
+      <span class="text-xl md:text-2xl font-extrabold tracking-tight">
+        Pet<span class="text-third">Sitter 24</span>
+      </span>
     </a>
-    
-    <a href="/avis" class={`hover:text-third transition-colors relative group py-1 ${currentPath === '/avis' ? 'text-third font-bold' : ''}`}>
-      Avis
-      <span class={`absolute bottom-0 left-0 h-0.5 bg-third transition-all duration-300 ${currentPath === '/avis' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
-    </a>
-    
-    <a href="/tarifs" class={`hover:text-third transition-colors relative group py-1 ${currentPath === '/tarifs' ? 'text-third font-bold' : ''}`}>
-      Tarifs
-      <span class={`absolute bottom-0 left-0 h-0.5 bg-third transition-all duration-300 ${currentPath === '/tarifs' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
-    </a>
-    
-    <a href="/contact" class={`hover:text-third transition-colors relative group py-1 ${currentPath === '/contact' ? 'text-third font-bold' : ''}`}>
-      Contact
-      <span class={`absolute bottom-0 left-0 h-0.5 bg-third transition-all duration-300 ${currentPath === '/contact' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
-    </a>
-  </nav>
+
+    <!-- Navigation Bureau (Visible uniquement sur tablette/desktop) -->
+    <nav class="hidden md:flex gap-8 font-medium items-center text-font-primary">
+      <a href="/#home" class={`hover:text-third hover:-translate-y-0.5 transition-all ${currentPath === '/' ? 'text-third font-bold' : ''}`}>Accueil</a>
+      
+      <a href="/galerie" class={`hover:text-third hover:-translate-y-0.5 transition-all relative group py-1 ${currentPath === '/galerie' ? 'text-third font-bold' : ''}`}>
+        Galerie
+        <span class={`absolute bottom-0 left-0 h-0.5 bg-third transition-all duration-300 ${currentPath === '/galerie' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+      </a>
+      
+      <a href="/avis" class={`hover:text-third hover:-translate-y-0.5 transition-all relative group py-1 ${currentPath === '/avis' ? 'text-third font-bold' : ''}`}>
+        Avis
+        <span class={`absolute bottom-0 left-0 h-0.5 bg-third transition-all duration-300 ${currentPath === '/avis' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+      </a>
+      
+      <a href="/tarifs" class={`hover:text-third hover:-translate-y-0.5 transition-all relative group py-1 ${currentPath === '/tarifs' ? 'text-third font-bold' : ''}`}>
+        Tarifs
+        <span class={`absolute bottom-0 left-0 h-0.5 bg-third transition-all duration-300 ${currentPath === '/tarifs' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+      </a>
+      
+      <a href="/contact" class={`hover:text-third hover:-translate-y-0.5 transition-all relative group py-1 ${currentPath === '/contact' ? 'text-third font-bold' : ''}`}>
+        Contact
+        <span class={`absolute bottom-0 left-0 h-0.5 bg-third transition-all duration-300 ${currentPath === '/contact' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+      </a>
+    </nav>
+
+    <!-- Hamburger Menu Bouton (Mobile uniquement) -->
+    <button id="mobile-menu-btn" aria-label="Menu" class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] z-60">
+      <span class="w-6 h-[2px] bg-font-primary transition-all duration-300 origin-center" id="line1"></span>
+      <span class="w-6 h-[2px] bg-font-primary transition-all duration-300 origin-center" id="line2"></span>
+      <span class="w-6 h-[2px] bg-font-primary transition-all duration-300 origin-center" id="line3"></span>
+    </button>
+  </div>
+
+  <!-- Menu Mobile Overlay -->
+  <div id="mobile-menu" class="md:hidden fixed inset-0 h-dvh bg-primary/98 backdrop-blur-xl z-50 flex flex-col justify-center items-center opacity-0 pointer-events-none transition-all duration-300 px-6">
+    <nav class="flex flex-col gap-8 font-bold items-center text-3xl text-font-primary text-center">
+      <a href="/#home" class="mobile-link hover:text-third transition-colors">Accueil</a>
+      <a href="/galerie" class="mobile-link hover:text-third transition-colors">Galerie</a>
+      <a href="/avis" class="mobile-link hover:text-third transition-colors">Avis</a>
+      <a href="/tarifs" class="mobile-link hover:text-third transition-colors">Tarifs</a>
+      <a href="/contact" class="mobile-link px-8 py-4 bg-third/15 text-third rounded-full mt-4 text-2xl">Contact</a>
+    </nav>
+  </div>
 </header>
+
+<script>
+  const header = document.getElementById('main-header') as HTMLElement;
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const line1 = document.getElementById('line1');
+  const line2 = document.getElementById('line2');
+  const line3 = document.getElementById('line3');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+  
+  let isMenuOpen = false;
+
+  const toggleMenu = () => {
+    isMenuOpen = !isMenuOpen;
+    
+    if (isMenuOpen) {
+      menu?.classList.remove('opacity-0', 'pointer-events-none');
+      menu?.classList.add('opacity-100', 'pointer-events-auto');
+      
+      if (line1) line1.style.transform = 'translateY(7px) rotate(45deg)';
+      if (line2) line2.style.opacity = '0';
+      if (line3) line3.style.transform = 'translateY(-7px) rotate(-45deg)';
+      
+      document.body.style.overflow = 'hidden';
+    } else {
+      menu?.classList.add('opacity-0', 'pointer-events-none');
+      menu?.classList.remove('opacity-100', 'pointer-events-auto');
+      
+      if (line1) line1.style.transform = 'none';
+      if (line2) line2.style.opacity = '1';
+      if (line3) line3.style.transform = 'none';
+      
+      document.body.style.overflow = '';
+    }
+  };
+
+  btn?.addEventListener('click', toggleMenu);
+  
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (isMenuOpen) toggleMenu();
+    });
+  });
+
+  const handleScroll = () => {
+    if (!header) return; 
+
+    if (window.scrollY > 20) {
+      header.classList.remove('py-4', 'md:py-5', 'bg-transparent');
+      header.classList.add('py-2', 'md:py-3', 'bg-white/95', 'backdrop-blur-md', 'shadow-sm', 'border-b', 'border-third/20');
+    } else {
+      header.classList.add('py-4', 'md:py-5', 'bg-transparent');
+      header.classList.remove('py-2', 'md:py-3', 'bg-white/95', 'backdrop-blur-md', 'shadow-sm', 'border-b', 'border-third/20');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
+</script>
