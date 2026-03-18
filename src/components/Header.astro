@@ -1,3 +1,35 @@
-<header class="border-third bg-secondary border-b flex flex-row p-3 fixed top-0 z-50 w-full">
-<p class="text-lg font-bold">Pet<span class="text-third">Sitter 24</span></p>
+---
+const pathname = Astro.url.pathname;
+// Remove any trailing slash to compare safely (except for root path)
+const currentPath = pathname === "/" ? pathname : pathname.replace(/\/$/, "");
+---
+<header class="border-third border-b flex justify-between items-center px-6 py-3 fixed top-0 z-50 w-full shadow-sm backdrop-blur-md bg-secondary/90">
+  <!-- Titre gauche -->
+  <a href="/" class="text-xl font-extrabold tracking-tight text-primary">
+    Pet<span class="text-third">Sitter 24</span>
+  </a>
+
+  <nav class="hidden md:flex gap-8 font-medium items-center mr-4 text-black">
+    <a href="/#home" class={`hover:text-third transition-colors ${currentPath === '/' ? 'text-third font-bold' : ''}`}>Accueil</a>
+    
+    <a href="/galerie" class={`hover:text-third transition-colors relative group py-1 ${currentPath === '/galerie' ? 'text-third font-bold' : ''}`}>
+      Galerie
+      <span class={`absolute bottom-0 left-0 h-0.5 bg-third transition-all duration-300 ${currentPath === '/galerie' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+    </a>
+    
+    <a href="/avis" class={`hover:text-third transition-colors relative group py-1 ${currentPath === '/avis' ? 'text-third font-bold' : ''}`}>
+      Avis
+      <span class={`absolute bottom-0 left-0 h-0.5 bg-third transition-all duration-300 ${currentPath === '/avis' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+    </a>
+    
+    <a href="/tarifs" class={`hover:text-third transition-colors relative group py-1 ${currentPath === '/tarifs' ? 'text-third font-bold' : ''}`}>
+      Tarifs
+      <span class={`absolute bottom-0 left-0 h-0.5 bg-third transition-all duration-300 ${currentPath === '/tarifs' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+    </a>
+    
+    <a href="/contact" class={`hover:text-third transition-colors relative group py-1 ${currentPath === '/contact' ? 'text-third font-bold' : ''}`}>
+      Contact
+      <span class={`absolute bottom-0 left-0 h-0.5 bg-third transition-all duration-300 ${currentPath === '/contact' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+    </a>
+  </nav>
 </header>

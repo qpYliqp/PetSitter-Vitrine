@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from "../components/Header.astro";
+import Footer from '../components/Footer.astro';
+import Vignette from "../components/shared/Vignette.astro";
+import TapedIllustration from "../components/shared/TapedIllustration.astro";
+import "../styles/global.css";
+
+const tapeStyleTxt = "absolute w-12 md:w-16 h-5 md:h-6 bg-third shadow-sm backdrop-blur-[1px] pointer-events-none opacity-70";
+
+const photos = [
+  { src: "/illustrations/vignettes/dog-bird1.jpg", alt: "Photo 1", rot: -2 },
+  { src: "/illustrations/vignettes/dog1.jpg", alt: "Photo 2", rot: 1.5 },
+  { src: "/illustrations/vignettes/dog2.jpg", alt: "Photo 3", rot: -1 },
+  { src: "/illustrations/vignettes/dog-sitter1.jpg", alt: "Photo 1", rot: 3.5 },
+  { src: "/illustrations/vignettes/dog3.jpg", alt: "Photo 2", rot: -3 },
+  { src: "/illustrations/vignettes/dog4.jpg", alt: "Photo 3", rot: 1 },
+  { src: "/illustrations/vignettes/bird1.jpg", alt: "Photo 1", rot: -2.5 },
+  { src: "/illustrations/vignettes/dog-sitter2.jpg", alt: "Photo 2", rot: 4 },
+  { src: "/illustrations/vignettes/dog5.jpg", alt: "Photo 3", rot: -1.5 },
+];
+---
+
+<Layout>
+    <Header></Header>
+    <main class="min-h-screen pt-24 pb-12 relative overflow-hidden">
+        <!-- Texture de fond similaire à AboutMe -->
+        <div class="absolute inset-0 -z-10 opacity-5 bg-[url('/illustrations/paper-texture.png')] bg-repeat mix-blend-multiply"></div>
+
+        <div class="container mx-auto px-4">
+            
+            <!-- Entête avec le style de titre et l'illustration scotché -->
+            <div class="flex flex-col items-center gap-8 text-center mb-16 relative">
+                 <h1 class="text-4xl md:text-5xl font-bold mb-2 relative inline-block mt-8">
+                    Notre belle
+                    <span class="text-third relative z-10">Galerie</span>
+                    <svg class="absolute bottom-0 left-0 w-full h-3 -z-10 text-third/30" viewBox="0 0 100 10" preserveAspectRatio="none">
+                        <path d="M0 5 Q 25 0, 50 5 T 100 5" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    </svg>
+                </h1>
+                
+                <p class="text-lg text-muted-foreground leading-relaxed max-w-2xl text-center mb-8" style="font-family: 'Comic Sans MS', 'cursive', sans-serif;">
+                     Découvrez tous les moments de joie, de jeu et de repos partagés avec vos adorables compagnons ! Parce que des images valent souvent mieux que de longs discours.
+                </p>
+
+                <div class="relative z-10 transform transition-transform hover:scale-[1.02] duration-300">
+                    <TapedIllustration imageUrl="/illustrations/galerie-cover.jpg" width="w-72 md:w-96" height="h-64 md:h-80" />
+                </div>
+            </div>
+
+            <!-- Grille de Vignettes avec les vrais composants partagés -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-8 gap-y-16 p-4 md:p-10 justify-items-center mt-12">
+                {photos.map((p) => (
+                    <div class="transform transition hover:z-20">
+                        <Vignette
+                            imageUrl={p.src}
+                            alt={p.alt}
+                            rotation={p.rot}
+                        />
+                    </div>
+                ))}
+            </div>
+
+            <div class="mt-20 flex justify-center">
+                 <p class="text-lg text-muted-foreground italic font-medium">Rejoignez-nous et ajoutez la photo de votre compagnon à la famille !</p>
+            </div>
+            
+        </div>
+    </main>
+    <Footer></Footer>
+</Layout>

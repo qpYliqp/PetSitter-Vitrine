@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import "../styles/global.css";
+---
+
+<Layout>
+  <Header />
+  <main class="min-h-screen pt-32 pb-16 bg-primary">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-slate-100">
+        <h1 class="text-4xl font-bold mb-8 text-third text-center">Mentions Légales</h1>
+        
+        <div class="space-y-8 text-slate-700">
+          <section>
+            <h2 class="text-2xl font-bold mb-4 text-slate-800 border-b pb-2">1. Éditeur du site</h2>
+            <p class="mb-2"><strong>Nom de l'entreprise :</strong> PetSitter24</p>
+            <p class="mb-2"><strong>SIRET :</strong> 10153412100013</p>
+            <p class="mb-2"><strong>Responsable éditorial :</strong> PetSitter24</p>
+            <p class="mb-2"><strong>Siège social :</strong> Mensignac, Dordogne, France</p>
+            <p class="mb-2"><strong>Téléphone :</strong> 06 22 07 33 56</p>
+            <p><strong>Email :</strong> votre@email.com</p>
+          </section>
+
+           <section>
+            <h2 class="text-2xl font-bold mb-4 text-slate-800 border-b pb-2">2. Hébergement</h2>
+            <p>Ce site est hébergé par :</p>
+            <p class="mt-2 text-slate-600 italic">[Nom de l'hébergeur : Vercel / Netlify / Hostinger]</p>
+            <p class="text-slate-600 italic">[Adresse de l'hébergeur]</p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-bold mb-4 text-slate-800 border-b pb-2">3. Propriété intellectuelle</h2>
+            <p>L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques.</p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-bold mb-4 text-slate-800 border-b pb-2">4. Collecte des données personnelles</h2>
+            <p>Dans le cadre de l'utilisation du formulaire de contact, certaines données personnelles (Nom, Prénom, Email, informations sur l'animal) sont collectées dans le seul but de pouvoir vous recontacter et répondre à votre demande de garde. Ces données ne sont ni vendues, ni cédées à des tiers. Conformément à la loi Informatique et Libertés et au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données personnelles.</p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
