@@ -1,0 +1,27 @@
+---
+interface Props {
+  imageUrl: string;
+  alt: string;
+}
+
+const { imageUrl, alt } = Astro.props;
+---
+
+<div class="w-full bg-white p-4 pb-14 shadow-md border border-slate-100 rounded-sm relative flex flex-col items-center">
+  <!-- Image Container -->
+  <div class="w-full aspect-3/2 lg:aspect-video overflow-hidden bg-gray-100 relative shadow-inner">
+    <img 
+      src={imageUrl} 
+      alt={alt} 
+      class="w-full h-full object-cover" 
+      loading="lazy"
+    />
+  </div>
+  
+  <!-- Légende Polaroid -->
+  <div class="absolute bottom-0 left-0 w-full h-14 flex items-center justify-center">
+    <span class="font-[Comic_Sans_MS] tracking-wide text-slate-700 text-lg md:text-xl">
+      {alt}
+    </span>
+  </div>
+</div>
