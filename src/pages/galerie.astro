@@ -29,8 +29,7 @@ const tapeStyleTxt =
         </h1>
 
         <p
-          class="text-lg text-muted-foreground leading-relaxed max-w-2xl text-center mb-8"
-          style="font-family: 'Comic Sans MS', 'cursive', sans-serif;"
+          class="text-lg text-muted-foreground leading-relaxed max-w-2xl text-center mb-8 font-medium"
         >
           Découvrez tous les moments de joie, de jeu et de repos partagés avec
           vos adorables compagnons ! Parce que des images valent souvent mieux
@@ -41,7 +40,7 @@ const tapeStyleTxt =
       <div
         class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 p-4 md:p-8 items-stretch justify-center relative max-w-6xl mx-auto mt-4"
       >
-        {photos.map((p) => <LargeVignette imageUrl={p.src} alt={p.alt} />)}
+        {photos.map((p) => <LargeVignette imageUrl={p.src} alt={p.alt} description={p.description} />)}
       </div>
     </div>
   </main>
