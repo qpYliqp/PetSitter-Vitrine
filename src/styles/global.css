@@ -1,0 +1,42 @@
+﻿@import "tailwindcss";
+
+
+@theme
+{
+    --color-primary: #FFF9F5;
+    --color-secondary: #FFF7F1;
+    --color-third: #D97642;
+    --color-badge: #FFF3E8;
+    --color-muted-foreground: #8B7355;
+    --color-environement: #03C490;
+    --color-font-primary: #3D2817;
+    --color-footer: #2A1B10 ;
+    --font-primary: "Roboto";
+    --animate-buzz: buzz 1s ease-in-out 1;
+    --animate-buzzy: buzzy 0.15s linear infinite;
+    @keyframes buzz {
+        0%, 100% { transform: translateX(0) rotate(0); }
+        15%, 45% { transform: translateX(-3px) rotate(-2deg); }
+        30%, 60% { transform: translateX(3px) rotate(2deg); }
+        75% { transform: translateX(-2px) rotate(-1deg); }
+        90% { transform: translateX(1px) rotate(0); }
+    }
+    @keyframes buzzy {
+    0% { transform: translate(0px, 0px) rotate(0deg); }
+    20% { transform: translate(-3px, 3px) rotate(-2deg); }
+    40% { transform: translate(-3px, -3px) rotate(2deg); }
+    60% { transform: translate(3px, 3px) rotate(0deg); }
+    80% { transform: translate(3px, -3px) rotate(-2deg); }
+    100% { transform: translate(0px, 0px) rotate(2deg); }
+}
+}
+
+@layer base {
+    body, html {
+        @apply font-primary bg-primary text-font-primary w-full h-full;
+    }
+
+    .container {
+        @apply max-w-[96rem];
+    }
+}

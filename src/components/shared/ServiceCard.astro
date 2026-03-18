@@ -1,0 +1,31 @@
+﻿---
+import { Icon } from 'astro-icon/components'
+import ServiceArgument from "./ServiceArgument.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  iconName: string;
+  arguments: string[];
+}
+
+const { title, description, iconName, arguments: serviceArgs } = Astro.props;
+---
+
+<div class="bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 p-6 h-full flex flex-col min-h-[350px]">
+  
+  <div class="flex items-center gap-3">
+    <div class="bg-primary rounded-xl flex items-center justify-center mb-4 w-12 h-12 shrink-0">
+      <Icon name={iconName} class="text-third w-8 h-8" />
+    </div>
+    <h3 class="text-xl font-bold mb-2">{title}</h3>
+  </div>
+
+  <p class="p-3 mb-2">{description}</p>
+
+  <div class="space-y-2 mt-auto">
+    {serviceArgs.map((arg) => (
+      <ServiceArgument argument={arg} />
+    ))}
+  </div>
+</div>

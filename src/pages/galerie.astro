@@ -1,0 +1,48 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import LargeVignette from "../components/shared/LargeVignette.astro";
+import TapedIllustration from "../components/shared/TapedIllustration.astro";
+import { galeriePhotos as photos } from "../data/photos";
+import "../styles/global.css";
+
+const tapeStyleTxt =
+  "absolute w-12 md:w-16 h-5 md:h-6 bg-third shadow-sm backdrop-blur-[1px] pointer-events-none opacity-70";
+---
+
+<Layout
+  title="Galerie Photos & Souvenirs | Sandrine PetSitter Mensignac"
+  description="Découvrez notre somptueuse galerie de photos ! Que des chiens heureux et détendus profitant d'un grand jardin lors de leurs séjours de garde en Dordogne."
+>
+  <Header />
+  <main class="min-h-screen pt-24 pb-20 relative overflow-hidden">
+    <div class="absolute inst-0 -z-10 opacity-5"></div>
+
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div
+        class="flex flex-col items-center gap-8 text-center mb-16 relative pt-"
+      >
+        <h1 class="text-4xl md:text-5xl font-bold mb-2 relative inline-block">
+          Des souvenirs
+          <span class="text-third relative z-10">inoubliables</span>
+        </h1>
+
+        <p
+          class="text-lg text-muted-foreground leading-relaxed max-w-2xl text-center mb-8 font-medium"
+        >
+          Découvrez tous les moments de joie, de jeu et de repos partagés avec
+          vos adorables compagnons ! Parce que des images valent souvent mieux
+          que de longs discours.
+        </p>
+      </div>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 p-4 md:p-8 items-stretch justify-center relative max-w-6xl mx-auto mt-4"
+      >
+        {photos.map((p) => <LargeVignette imageUrl={p.src} alt={p.alt} description={p.description} />)}
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

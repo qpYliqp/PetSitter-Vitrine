@@ -1,0 +1,179 @@
+---
+import { Icon } from "astro-icon/components";
+
+const tapeStyleTxt =
+  "absolute w-12 md:w-16 h-5 md:h-6 bg-third shadow-sm backdrop-blur-[1px] pointer-events-none opacity-70";
+---
+
+<div
+  class="relative bg-white p-8 md:p-12 shadow-[2px_4px_25px_rgba(0,0,0,0.1)] rounded-sm border border-gray-100 max-w-xl mx-auto w-full"
+>
+  <div class={`${tapeStyleTxt} -top-3 -left-2 md:-left-4 -rotate-12`}></div>
+  <div class={`${tapeStyleTxt} -bottom-3 -right-2 md:-right-4 rotate-6`}></div>
+
+  <h3 class="text-2xl font-bold text-third mb-8 text-center mt-2">
+    Envoyez-moi un message
+  </h3>
+
+  <form
+    id="contactForm"
+    action="https://api.web3forms.com/submit"
+    method="POST"
+    class="space-y-6 relative z-10"
+  >
+    <input
+      type="hidden"
+      name="access_key"
+      value="dfb126e2-561a-468a-a620-3471c02267b3"
+    />
+    <input
+      type="hidden"
+      name="subject"
+      value="Nouveau message depuis ton site web PetSitter !"
+    />
+    <input
+      type="checkbox"
+      name="botcheck"
+      class="hidden"
+      style="display: none;"
+    />
+
+    <div class="space-y-2">
+      <label for="name" class="block text-sm font-bold text-gray-700"
+        >Nom & Prénom</label
+      >
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-third focus:ring-2 focus:ring-third/20 bg-gray-50 transition-all font-medium"
+        placeholder="Jean Dupont"
+        required
+      />
+    </div>
+
+    <div class="space-y-2">
+      <label for="email" class="block text-sm font-bold text-gray-700"
+        >Adresse Email</label
+      >
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-third focus:ring-2 focus:ring-third/20 bg-gray-50 transition-all font-medium"
+        placeholder="jean@exemple.com"
+        required
+      />
+    </div>
+
+    <div class="space-y-2">
+      <label for="subject" class="block text-sm font-bold text-gray-700"
+        >Objet du message</label
+      >
+      <input
+        type="text"
+        id="subject"
+        name="subject_custom"
+        class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-third focus:ring-2 focus:ring-third/20 bg-gray-50 transition-all font-medium"
+        placeholder="Garde de mon chien le weekend prochain"
+        required
+      />
+    </div>
+
+    <div class="space-y-2">
+      <label for="message" class="block text-sm font-bold text-gray-700"
+        >Votre Message</label
+      >
+      <textarea
+        id="message"
+        name="message"
+        rows="5"
+        class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-third focus:ring-2 focus:ring-third/20 bg-gray-50 transition-all resize-none font-medium"
+        placeholder="Dites-m'en plus sur les besoins de votre compagnon..."
+        required></textarea>
+    </div>
+
+    <button
+      id="submitBtn"
+      type="submit"
+      class="w-full px-5 py-4 mt-4 bg-third text-white font-bold rounded-xl transition duration-300 ease-in-out shadow-lg hover:shadow-xl hover:-translate-y-0.5 cursor-pointer disabled:opacity-75 disabled:cursor-wait"
+    >
+      Envoyer le message
+    </button>
+  </form>
+
+  <div
+    id="successPopup"
+    class="absolute inset-0 z-50 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-300 rounded-sm"
+  >
+    <div
+      id="successPopupContent"
+      class="bg-white p-8 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] border border-third/20 text-center transform scale-95 transition-transform duration-500 delay-100 flex flex-col items-center"
+    >
+      <div
+        class="w-20 h-20 bg-green-50 text-green-500 rounded-full flex items-center justify-center mb-6 shadow-inner"
+      >
+        <Icon name="mdi:check-circle" class="w-12 h-12" />
+      </div>
+      <h4
+        class="text-3xl font-bold text-gray-800 mb-3"
+      >
+        Message envoyé !
+      </h4>
+      <p class="text-gray-600 font-medium text-lg leading-relaxed">
+        Merci de m'avoir contactée.<br />Je vous réponds très vite !
+      </p>
+
+      <div class="mt-8 flex justify-center w-full">
+        <a
+          href="/"
+          class="px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold rounded-xl transition-colors duration-300"
+        >
+          Retour à l'accueil
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById("contactForm") as HTMLFormElement;
+  const popup = document.getElementById("successPopup");
+  const popupContent = document.getElementById("successPopupContent");
+  const submitBtn = document.getElementById("submitBtn") as HTMLButtonElement;
+
+  if (form && popup && popupContent && submitBtn) {
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const originalText = submitBtn.innerText;
+      submitBtn.innerText = "Envoi en cours...";
+      submitBtn.disabled = true;
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData,
+        });
+
+        if (response.ok) {
+          popup.classList.remove("pointer-events-none");
+          window.requestAnimationFrame(() => {
+            popup.classList.replace("opacity-0", "opacity-100");
+            popupContent.classList.replace("scale-95", "scale-100");
+          });
+        } else {
+          alert("Une erreur est survenue lors de l'envoi. Veuillez réessayer.");
+          submitBtn.innerText = originalText;
+          submitBtn.disabled = false;
+        }
+      } catch (error) {
+        alert("Erreur de connexion. Veuillez vérifier votre accès internet.");
+        submitBtn.innerText = originalText;
+        submitBtn.disabled = false;
+      }
+    });
+  }
+</script>

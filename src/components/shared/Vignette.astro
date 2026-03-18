@@ -1,0 +1,16 @@
+﻿---
+interface Props {
+  imageUrl: string;
+  alt: string;
+  rotation?: number;
+}
+const { imageUrl, alt, rotation = 0 } = Astro.props;
+---
+<div
+class="w-45 md:w-64 bg-white pt-3 px-3 pb-8 shadow-xl rounded-sm rotate-[var(--r)] transition-transform duration-300 ease-out hover:scale-115 hover:z-50 hover:shadow-2xl "
+style={`--r: ${rotation}deg;`}
+>
+<div class="aspect-square w-full overflow-hidden bg-gray-100">
+  <img src={imageUrl} alt={alt} class="w-full h-full object-cover" />
+</div>
+</div>

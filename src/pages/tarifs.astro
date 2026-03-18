@@ -1,0 +1,179 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { Icon } from "astro-icon/components";
+import TapedIllustration from "../components/shared/TapedIllustration.astro";
+import "../styles/global.css";
+---
+
+<Layout
+  title="Tarifs et Prestations | Sandrine PetSitter Dordogne"
+  description="Consultez les tarifs pour la garde de vos animaux : hébergement journée + nuit, garderie simple. Des prix clairs pour le bonheur de votre chien."
+>
+  <Header />
+  <main class="min-h-screen pt-24 pb-16 relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 opacity-5"></div>
+
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="flex flex-col items-center gap-6 text-center mb-16 relative">
+        <h1
+          class="text-4xl md:text-5xl font-bold mb-2 relative inline-block mt-8"
+        >
+          Mes Prestations & <span class="text-third relative z-10">Tarifs</span>
+          <svg
+            class="absolute bottom-0 left-0 w-full h-3 -z-10 text-third/30"
+            viewBox="0 0 100 10"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0 5 Q 25 0, 50 5 T 100 5"
+              stroke="currentColor"
+              stroke-width="3"
+              fill="none"
+              stroke-linecap="round"></path>
+          </svg>
+        </h1>
+
+        <p
+          class="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl text-center mb-8"
+        >
+          Découvrez une offre claire et transparente, pensée pour offrir les
+          meilleures conditions de séjour à votre compagnon durant votre
+          absence.
+        </p>
+
+        <div
+          class="flex items-center gap-4 bg-red-50 border-l-4 border-third/70 p-6 rounded-r-xl shadow-md transform transition hover:scale-[1.02] max-w-3xl w-full text-left"
+        >
+          <Icon name="mdi:alert-circle" class="w-10 h-10 shrink-0 text-third" />
+          <p class="font-bold md:text-lg">
+            UN ACOMPTE DE 30% EST REQUIS POUR VALIDER LA PRESTATION ET GARANTIR
+            LE LANCEMENT DU PROJET.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div
+          class="bg-white rounded-4xl p-8 shadow-xl border border-gray-100 flex flex-col relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300"
+        >
+          <div
+            class="absolute -right-4 -top-4 w-32 h-32 bg-third/10 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500 ease-out"
+          >
+          </div>
+          <div
+            class="absolute -left-4 -bottom-4 w-24 h-24 bg-primary/5 rounded-full opacity-50"
+          >
+          </div>
+
+          <div class="relative z-10 flex flex-col h-full">
+            <div class="flex items-center gap-4 mb-8">
+              <div
+                class="w-16 h-16 rounded-full bg-secondary flex items-center justify-center shrink-0"
+              >
+                <Icon name="paw" class="w-8 h-8 text-third" />
+              </div>
+              <h2 class="text-2xl font-bold">
+                HÉBERGEMENT<br /><span class="text-sm text-third font-normal"
+                  >Journée + Nuit</span
+                >
+              </h2>
+            </div>
+
+            <div class="space-y-6 grow bg-gray-50 p-6 rounded-2xl">
+              <div
+                class="flex justify-between items-end border-b border-gray-200 pb-3"
+              >
+                <span class="font-bold text-gray-800 text-lg">Chien</span>
+                <span class="text-3xl font-extrabold text-third"
+                  >20€<span class="text-sm text-gray-500 font-normal"
+                    >/jour</span
+                  ></span
+                >
+              </div>
+
+              <div
+                class="flex justify-between items-end border-b border-gray-200 pb-3"
+              >
+                <span class="font-bold text-gray-800 text-lg">Chiot</span>
+                <span class="text-3xl font-extrabold text-third"
+                  >22€<span class="text-sm text-gray-500 font-normal"
+                    >/jour</span
+                  ></span
+                >
+              </div>
+
+              <div class="flex justify-between items-end pb-2">
+                <span class="font-medium text-gray-600"
+                  >Chien supplémentaire</span
+                >
+                <span class="text-xl font-bold text-gray-800">+10€</span>
+              </div>
+            </div>
+
+            <div class="mt-8 text-center text-sm font-medium text-gray-500">
+              Des nuits douillettes et des journées animées. Câlins, sorties et
+              photos inclus !
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-4xl p-8 shadow-xl border border-gray-100 flex flex-col relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300"
+        >
+          <div
+            class="absolute -right-4 -top-4 w-32 h-32 bg-third/10 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500 ease-out"
+          >
+          </div>
+          <div
+            class="absolute -left-4 -bottom-4 w-24 h-24 bg-primary/5 rounded-full opacity-50"
+          >
+          </div>
+
+          <div class="relative z-10 flex flex-col h-full">
+            <div class="flex items-center gap-4 mb-8">
+              <div
+                class="w-16 h-16 rounded-full bg-secondary flex items-center justify-center shrink-0"
+              >
+                <Icon name="gamelle" class="w-8 h-8 text-third" />
+              </div>
+              <h2 class="text-2xl font-bold">
+                GARDERIE<br /><span class="text-sm text-third font-normal"
+                  >Journée uniquement</span
+                >
+              </h2>
+            </div>
+
+            <div class="space-y-6 grow bg-gray-50 p-6 rounded-2xl">
+              <div
+                class="flex justify-between items-end border-b border-gray-200 pb-3"
+              >
+                <span class="font-bold text-gray-800 text-lg">Chien</span>
+                <span class="text-3xl font-extrabold text-third"
+                  >15€<span class="text-sm text-gray-500 font-normal"
+                    >/jour</span
+                  ></span
+                >
+              </div>
+
+              <div class="flex justify-between items-end pb-2">
+                <span class="font-bold text-gray-800 text-lg">Chiot</span>
+                <span class="text-3xl font-extrabold text-third"
+                  >17€<span class="text-sm text-gray-500 font-normal"
+                    >/jour</span
+                  ></span
+                >
+              </div>
+            </div>
+            <div class="mt-8 text-center text-sm font-medium text-gray-500">
+              Pour des journées d'absence sans culpabilité. (Amour, balades et
+              photos compris).
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

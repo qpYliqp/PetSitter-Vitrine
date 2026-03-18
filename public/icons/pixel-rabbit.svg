@@ -1,0 +1,89 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
+<g id="rabbit">
+    <!-- Oreille gauche -->
+    <rect x="154" y="51" style="fill:#E8E8E8;" width="26" height="26"/>
+    <rect x="154" y="77" style="fill:#E8E8E8;" width="26" height="26"/>
+    <rect x="154" y="103" style="fill:#E8E8E8;" width="26" height="26"/>
+    <rect x="154" y="128" style="fill:#E8E8E8;" width="26" height="26"/>
+    <rect x="180" y="77" style="fill:#C0C0C0;" width="26" height="26"/>
+    <rect x="180" y="103" style="fill:#C0C0C0;" width="26" height="26"/>
+    
+    <!-- Oreille droite -->
+    <rect x="332" y="51" style="fill:#E8E8E8;" width="26" height="26"/>
+    <rect x="332" y="77" style="fill:#E8E8E8;" width="26" height="26"/>
+    <rect x="332" y="103" style="fill:#E8E8E8;" width="26" height="26"/>
+    <rect x="332" y="128" style="fill:#E8E8E8;" width="26" height="26"/>
+    <rect x="306" y="77" style="fill:#C0C0C0;" width="26" height="26"/>
+    <rect x="306" y="103" style="fill:#C0C0C0;" width="26" height="26"/>
+    
+    <!-- Tête -->
+    <rect x="180" y="154" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="206" y="154" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="232" y="154" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="258" y="154" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="284" y="154" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="306" y="154" style="fill:#F5F5F5;" width="26" height="26"/>
+    
+    <rect x="154" y="180" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="180" y="180" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="206" y="180" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="232" y="180" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="258" y="180" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="284" y="180" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="306" y="180" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="332" y="180" style="fill:#F5F5F5;" width="26" height="26"/>
+    
+    <!-- Yeux -->
+    <rect x="206" y="180" style="fill:#202020;" width="26" height="26"/>
+    <rect x="284" y="180" style="fill:#202020;" width="26" height="26"/>
+    
+    <!-- Nez -->
+    <rect x="245" y="206" style="fill:#FFB6C1;" width="26" height="26"/>
+    
+    <!-- Corps -->
+    <rect x="180" y="232" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="206" y="232" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="232" y="232" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="258" y="232" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="284" y="232" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="306" y="232" style="fill:#F5F5F5;" width="26" height="26"/>
+    
+    <rect x="154" y="258" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="180" y="258" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="206" y="258" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="232" y="258" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="258" y="258" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="284" y="258" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="306" y="258" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="332" y="258" style="fill:#F5F5F5;" width="26" height="26"/>
+    
+    <rect x="180" y="284" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="206" y="284" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="232" y="284" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="258" y="284" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="284" y="284" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="306" y="284" style="fill:#F5F5F5;" width="26" height="26"/>
+    
+    <rect x="206" y="310" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="232" y="310" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="258" y="310" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="284" y="310" style="fill:#F5F5F5;" width="26" height="26"/>
+    
+    <!-- Pattes avant -->
+    <rect x="206" y="336" style="fill:#E8E8E8;" width="26" height="26"/>
+    <rect x="206" y="362" style="fill:#E8E8E8;" width="26" height="26"/>
+    <rect x="206" y="388" style="fill:#E8E8E8;" width="26" height="26"/>
+    
+    <rect x="284" y="336" style="fill:#E8E8E8;" width="26" height="26"/>
+    <rect x="284" y="362" style="fill:#E8E8E8;" width="26" height="26"/>
+    <rect x="284" y="388" style="fill:#E8E8E8;" width="26" height="26"/>
+    
+    <!-- Ombres -->
+    <rect x="332" y="180" style="fill:#D3D3D3;" width="26" height="26"/>
+    <rect x="332" y="258" style="fill:#D3D3D3;" width="26" height="26"/>
+    
+    <!-- Queue -->
+    <rect x="332" y="284" style="fill:#F5F5F5;" width="26" height="26"/>
+    <rect x="358" y="284" style="fill:#E8E8E8;" width="26" height="26"/>
+</g>
+</svg>

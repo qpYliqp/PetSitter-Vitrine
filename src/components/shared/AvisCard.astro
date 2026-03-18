@@ -1,0 +1,105 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  title: string;
+  description: string;
+  author?: string;
+}
+
+const { title, description, author = "Client heureux" } = Astro.props;
+---
+
+<div class="avis-card relative bg-white p-6 rounded-2xl shadow-md border border-gray-100 flex flex-col gap-4 min-h-[320px] h-fit cursor-pointer transition-all duration-300">
+  
+  <div class="absolute top-4 right-4 opacity-10 text-gray-400 pointer-events-none">
+    <Icon name="mdi:format-quote-close" class="size-10" />
+  </div>
+
+  <div class="flex text-yellow-400 gap-0.5">
+    {Array.from({ length: 5 }).map(() => (
+      <Icon name="star" class="size-5" />
+    ))}
+  </div>
+
+  <div class="flex-1">
+    <h3 class="text-lg font-bold text-gray-800 mb-2 font-heading">
+      {title}
+    </h3>
+    <div class="relative">
+      <p class="avis-description text-gray-600 leading-relaxed text-sm line-clamp-4 transition-all duration-300">
+        {description}
+      </p>
+      
+      <div class="h-5 mt-1">
+        <span class="avis-more-indicator text-third text-xs font-bold opacity-0 transition-opacity duration-300 hidden">
+          Lire la suite...
+        </span>
+        <span class="avis-less-indicator text-third text-xs font-bold opacity-0 transition-opacity duration-300 hidden">
+          Réduire
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-gray-100 pt-4 flex items-center gap-3">
+    <div class="bg-secondary text-third rounded-full w-8 h-8 flex items-center justify-center font-bold text-xs shrink-0">
+      {author.charAt(0)}
+    </div>
+    <span class="text-sm font-medium">{author}</span>
+  </div>
+</div>
+
+<script>
+  function initializeAvisCards() {
+    const cards = document.querySelectorAll('.avis-card');
+    
+    cards.forEach(card => {
+      const desc = card.querySelector('.avis-description') as HTMLElement;
+      const moreInd = card.querySelector('.avis-more-indicator') as HTMLElement;
+      const lessInd = card.querySelector('.avis-less-indicator') as HTMLElement;
+      
+      if (!desc) return;
+
+      // Check for overflow (if text takes up more space than visible height)
+      const isOverflowing = desc.scrollHeight > desc.clientHeight;
+      
+      if (isOverflowing) {
+        // Enable interaction styles
+        card.classList.add('hover:shadow-xl', 'hover:-translate-y-1');
+        moreInd.classList.remove('hidden');
+        moreInd.classList.add('block', 'opacity-100');
+        
+        // Add click listener
+        card.addEventListener('click', () => {
+          const isExpanded = !desc.classList.contains('line-clamp-4');
+          
+          if (!isExpanded) {
+            // Mettre en mode étendu (Expand)
+            desc.classList.remove('line-clamp-4');
+            moreInd.classList.add('hidden');
+            moreInd.classList.remove('block');
+            
+            lessInd.classList.remove('hidden');
+            lessInd.classList.add('block', 'opacity-100');
+          } else {
+            // Mettre en mode réduit (Collapse)
+            desc.classList.add('line-clamp-4');
+            lessInd.classList.add('hidden');
+            lessInd.classList.remove('block');
+            
+            moreInd.classList.remove('hidden');
+            moreInd.classList.add('block', 'opacity-100');
+          }
+        });
+      } else {
+        // S'il n'y a pas assez de texte pour justifier un bouton, on désactive le clic
+        card.classList.remove('cursor-pointer');
+        card.classList.add('cursor-default');
+      }
+    });
+  }
+
+  // Petit délai pour s'assurer que les polices et espacements sont bien calculés
+  setTimeout(initializeAvisCards, 150);
+</script>
