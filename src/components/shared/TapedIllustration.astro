@@ -4,22 +4,24 @@ interface Props
     imageUrl : string;
     width?: string;
     height?: string;
+    alt?: string;
 }
 
 const {
     imageUrl,
     width = "w-100", 
-    height = "h-120" 
+    height = "h-120",
+    alt = "Illustration"
 } = Astro.props;
 
 const tapeStyle = "absolute w-20 h-7 bg-third/80 shadow-sm backdrop-blur-[1px] pointer-events-none";
 ---
 
-<div class={`relative ${width} ${height} bg-white p-3 shadow-[4px_6px_12px_-2px_rgba(0,0,0,0.3)] rotate-[-2deg] transition hover:rotate-0 hover:scale-[1.02] duration-300 ease-out`}>
+<div class={`relative ${width} ${height} bg-white p-3 shadow-[4px_6px_12px_-2px_rgba(0,0,0,0.3)] -rotate-2 transition hover:rotate-0 hover:scale-[1.02] duration-300 ease-out`}>
 
-    <img class="w-full h-full object-cover pointer-events-none mix-blend-multiply" src={imageUrl} alt="Taped photograph"/>
+    <img class="w-full h-full object-cover pointer-events-none mix-blend-multiply" src={imageUrl} alt={alt}/>
 
     <div class={`${tapeStyle} -top-3 -left-5 rotate-[-25deg]`}></div>
 
-    <div class={`${tapeStyle} -top-3 -right-5 rotate-[20deg]`}></div>
+    <div class={`${tapeStyle} -top-3 -right-5 rotate-20`}></div>
 </div>

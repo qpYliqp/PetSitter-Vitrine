@@ -1,13 +1,67 @@
+---
+export interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+  type?: string;
+}
+
+const { 
+  title = "Sandrine PetSitter | Garde de chiens et compagnons en Dordogne (Mensignac)", 
+  description = "Confiez votre chien ou animal de compagnie à Sandrine, Pet Sitter qualifiée ACACED. Hébergement chaleureux en maison avec jardin clos. Pension pour chiens, garderie et visites.", 
+  image = "/illustrations/galerie-cover.jpg",
+  type = "website"
+} = Astro.props;
+
+// Calcul de l'URL Canonique (Pour éviter le duplicate content Google)
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url.origin);
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>PetSitter Dordogne</title>
+    
+    <!-- Méta-données SEO Primaires -->
+		<title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Sandrine PetSitter" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Balises Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site || Astro.url.origin)} />
+
+    <!-- Balises Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.site || Astro.url.origin)} />
+
+    <!-- Données Structurées pour le SEO Local Google (JSON-LD) -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "PetStore",
+      "name": "Sandrine PetSitter",
+      "image": new URL("/illustrations/galerie-cover.jpg", Astro.site || Astro.url.origin).href,
+      "@id": "",
+      "url": Astro.site ? Astro.site.origin : Astro.url.origin,
+      "telephone": "+33622073356",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mensignac",
+        "addressRegion": "Dordogne",
+        "addressCountry": "FR"
+      },
+      "description": "Pension canine, garderie et visites d'animaux. Sandrine vous propose de garder vos compagnons dans un cadre aimant, familial avec grand terrain."
+    })}></script>
 	</head>
 	<body><slot/></body>
 </html>
-
-

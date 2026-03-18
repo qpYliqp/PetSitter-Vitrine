@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://petsitter-vitrine.vercel.app/sitemap-index.xml

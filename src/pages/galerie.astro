@@ -2,40 +2,19 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Vignette from "../components/shared/Vignette.astro";
 import LargeVignette from "../components/shared/LargeVignette.astro";
 import TapedIllustration from "../components/shared/TapedIllustration.astro";
+import { galeriePhotos as photos } from "../data/photos";
 import "../styles/global.css";
 
 const tapeStyleTxt =
   "absolute w-12 md:w-16 h-5 md:h-6 bg-third shadow-sm backdrop-blur-[1px] pointer-events-none opacity-70";
-
-const photos = [
-  {
-    src: "/illustrations/vignettes/dog8.jpg",
-    alt: "Un grand sportif",
-    rot: -2,
-  },
-  {
-    src: "/illustrations/vignettes/dog4.jpg",
-    alt: "Dans un repos profond",
-    rot: 1.5,
-  },
-  {
-    src: "/illustrations/vignettes/dog2.jpg",
-    alt: "Mon pitre préféré",
-    rot: -1,
-  },
-  { src: "/illustrations/vignettes/dog-sitter1.jpg", alt: "Photo 1", rot: 3.5 },
-  { src: "/illustrations/vignettes/dog3.jpg", alt: "Photo 2", rot: -3 },
-  { src: "/illustrations/vignettes/dog4.jpg", alt: "Photo 3", rot: 1 },
-  { src: "/illustrations/vignettes/bird1.jpg", alt: "Photo 1", rot: -2.5 },
-  { src: "/illustrations/vignettes/dog-sitter2.jpg", alt: "Photo 2", rot: 4 },
-  { src: "/illustrations/vignettes/dog5.jpg", alt: "Photo 3", rot: -1.5 },
-];
 ---
 
-<Layout>
+<Layout
+  title="Galerie Photos & Souvenirs | Sandrine PetSitter Mensignac"
+  description="Découvrez notre somptueuse galerie de photos ! Que des chiens heureux et détendus profitant d'un grand jardin lors de leurs séjours de garde en Dordogne."
+>
   <Header />
   <main class="min-h-screen pt-24 pb-20 relative overflow-hidden">
     <div class="absolute inst-0 -z-10 opacity-5"></div>

@@ -7,39 +7,61 @@ import ContactForm from "../components/shared/ContactForm.astro";
 import "../styles/global.css";
 ---
 
-<Layout>
+<Layout
+  title="Contactez-moi | Sandrine PetSitter"
+  description="Une question ou une demande de garde pour votre animal ? Contactez Sandrine PetSitter par e-mail ou téléphone pour planifier votre rencontre."
+>
   <Header />
-  <main class="min-h-screen pt-28 md:pt-36 pb-24 relative overflow-hidden flex items-center">
-    <div class="absolute inset-0 -z-10 opacity-5 bg-[url('/illustrations/paper-texture.png')] bg-repeat mix-blend-multiply"></div>
+  <main
+    class="min-h-screen pt-28 md:pt-36 pb-24 relative overflow-hidden flex items-center"
+  >
+    <div
+      class="absolute inset-0 -z-10 opacity-5 bg-[url('/illustrations/paper-texture.png')] bg-repeat mix-blend-multiply"
+    >
+    </div>
 
     <div class="container mx-auto px-4 max-w-6xl">
-      <div class="flex flex-col md:flex-row gap-16 lg:gap-20 items-start justify-center">
-        
+      <div
+        class="flex flex-col md:flex-row gap-16 lg:gap-20 items-start justify-center"
+      >
         <!-- Colonne Gauche: Titre et Infos (Polaroid) -->
-        <div class="flex flex-col items-center md:items-start gap-10 text-center md:text-start w-full md:w-5/12 pt-4">
+        <div
+          class="flex flex-col items-center md:items-start gap-10 text-center md:text-start w-full md:w-5/12 pt-4"
+        >
           <div class="space-y-4">
             <h1 class="text-4xl md:text-5xl font-bold relative inline-block">
               Parlons de
               <span class="text-third relative z-10">vous</span>
-              <svg class="absolute bottom-0 left-0 w-full h-3 -z-10 text-third/30" viewBox="0 0 100 10" preserveAspectRatio="none">
-                <path d="M0 5 Q 25 0, 50 5 T 100 5" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"></path>
+              <svg
+                class="absolute bottom-0 left-0 w-full h-3 -z-10 text-third/30"
+                viewBox="0 0 100 10"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M0 5 Q 25 0, 50 5 T 100 5"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  fill="none"
+                  stroke-linecap="round"></path>
               </svg>
             </h1>
 
-            <p class="text-lg text-gray-700 leading-relaxed font-medium" style="font-family: 'Comic Sans MS', 'cursive', sans-serif;">
+            <p
+              class="text-lg text-gray-700 leading-relaxed font-medium"
+              style="font-family: 'Comic Sans MS', 'cursive', sans-serif;"
+            >
               N'hésitez pas à me contacter pour toute question, demande de devis
-              ou pour planifier une première rencontre avec votre petit protégé !
+              ou pour planifier une première rencontre avec votre petit protégé
+              !
             </p>
           </div>
 
           <ContactInfo />
         </div>
 
-        <!-- Colonne Droite: Formulaire -->
         <div class="w-full md:w-7/12 flex justify-center md:justify-end">
           <ContactForm />
         </div>
-
       </div>
     </div>
   </main>
