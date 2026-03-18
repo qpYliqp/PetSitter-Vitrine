@@ -1,0 +1,37 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const tapeStyleTxt = "absolute w-16 h-6 bg-third shadow-sm backdrop-blur-[2px] pointer-events-none opacity-80";
+---
+
+<div class="relative bg-white p-8 md:p-10 shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-slate-100 rounded-sm w-full max-w-md mx-auto md:mx-0 -rotate-1 transition-transform duration-300 hover:rotate-0">
+  <!-- Décoration Tape (Scotch) -->
+  <div class={`${tapeStyleTxt} -top-3 left-1/2 -translate-x-1/2 -rotate-3`}></div>
+
+  <h3 class="text-2xl font-bold tracking-wide text-slate-700 text-center mb-8 inline-block w-full" style="font-family: 'Comic Sans MS', 'cursive', sans-serif;">
+    Mes Coordonnées
+  </h3>
+
+  <div class="flex flex-col gap-6">
+    <a href="tel:+33622073356" class="flex items-center gap-4 group w-fit">
+      <div class="w-12 h-12 rounded-full bg-third/10 group-hover:bg-third flex justify-center items-center transition-colors duration-300">
+        <Icon name="mdi:phone" class="w-6 h-6 text-third group-hover:text-white transition-colors duration-300" />
+      </div>
+      <span class="text-slate-700 font-medium group-hover:text-third transition-colors">06 22 07 33 56</span>
+    </a>
+    
+    <a href="mailto:yliane.villot@gmail.com" class="flex items-center gap-4 group w-fit">
+      <div class="w-12 h-12 rounded-full bg-third/10 group-hover:bg-third flex justify-center items-center transition-colors duration-300">
+        <Icon name="mdi:email" class="w-6 h-6 text-third group-hover:text-white transition-colors duration-300" />
+      </div>
+      <span class="text-slate-700 font-medium group-hover:text-third transition-colors break-all">yliane.villot@gmail.com</span>
+    </a>
+    
+    <div class="flex items-center gap-4 group w-fit">
+      <div class="w-12 h-12 rounded-full bg-third/10 flex justify-center items-center">
+        <Icon name="mdi:map-marker" class="w-6 h-6 text-third" />
+      </div>
+      <span class="text-slate-700 font-medium">Mensignac, Dordogne</span>
+    </div>
+  </div>
+</div>
