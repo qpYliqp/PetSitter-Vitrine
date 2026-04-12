@@ -14,11 +14,9 @@ const {
   type = "website",
   faqSchema,
 } = Astro.props;
-
-// Calcul de l'URL Canonique (Pour éviter le duplicate content Google)
 const canonicalURL = new URL(
   Astro.url.pathname,
-  "https://pet-sitter-dordogne.fr", // Fallback robuste si Astro.site n'est pas défini (peut être remplacé par OVH plus tard)
+  "https://pet-sitter-dordogne.fr"
 );
 const baseUrl = "https://pet-sitter-dordogne.fr";
 
@@ -30,7 +28,7 @@ const localBusinessSchema = {
   alternateName: "Gardiennage Chien Dordogne Mensignac",
   image: new URL("/illustrations/galerie-cover.jpg", baseUrl).href,
   url: baseUrl,
-  telephone: "+33600000000", // A ADAPTER par l'utilisateur
+  telephone: "+33600000000",
   email: "sandrine.bonheur.canin@gmail.com",
   priceRange: "15€ - 20€",
   currenciesAccepted: "EUR",
@@ -122,7 +120,6 @@ const faqPageSchema = faqSchema
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Méta-données SEO Primaires -->
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Sandrine – Au Bonheur Canin" />
@@ -132,13 +129,11 @@ const faqPageSchema = faqSchema
     />
     <link rel="canonical" href={canonicalURL} />
 
-    <!-- Balises géographiques -->
     <meta name="geo.region" content="FR-24" />
     <meta name="geo.placename" content="Mensignac, Dordogne, France" />
     <meta name="geo.position" content="45.1931;0.5615" />
     <meta name="ICBM" content="45.1931, 0.5615" />
 
-    <!-- Balises Open Graph / Facebook -->
     <meta property="og:type" content={type} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
@@ -150,20 +145,17 @@ const faqPageSchema = faqSchema
       content="Au Bonheur Canin – Pet Sitter Dordogne"
     />
 
-    <!-- Balises Twitter Card -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, baseUrl)} />
 
-    <!-- Données Structurées pour le SEO Local Google (JSON-LD) -->
     <script
       type="application/ld+json"
       set:html={JSON.stringify(localBusinessSchema)}
     />
 
-    <!-- Données Structurées FAQ (JSON-LD) -->
     {
       faqPageSchema && (
         <script

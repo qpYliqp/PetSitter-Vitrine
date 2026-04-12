@@ -83,7 +83,6 @@ const { title, description, author = "Client heureux" } = Astro.props;
   function initializeAvisCards() {
     const cards = document.querySelectorAll(".avis-card");
 
-    // Scroll-reveal with staggered delay
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -111,14 +110,12 @@ const { title, description, author = "Client heureux" } = Astro.props;
 
       if (!desc || !wrapper) return;
 
-      // Measure the collapsed height (approx 4 lines)
       const lineHeight = parseFloat(getComputedStyle(desc).lineHeight) || 20;
       const collapsedHeight = lineHeight * 4;
       const fullHeight = desc.scrollHeight;
       const isOverflowing = fullHeight > collapsedHeight + 4;
 
       if (isOverflowing) {
-        // Set initial collapsed state
         wrapper.style.maxHeight = collapsedHeight + "px";
 
         moreInd.classList.remove("hidden");
@@ -128,14 +125,12 @@ const { title, description, author = "Client heureux" } = Astro.props;
 
         const toggle = () => {
           if (!expanded) {
-            // Expand: slide down
             wrapper.style.maxHeight = fullHeight + "px";
             moreInd.classList.add("hidden");
             moreInd.classList.remove("block");
             lessInd.classList.remove("hidden");
             lessInd.classList.add("block");
           } else {
-            // Collapse: slide up
             wrapper.style.maxHeight = collapsedHeight + "px";
             lessInd.classList.add("hidden");
             lessInd.classList.remove("block");

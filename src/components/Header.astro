@@ -1,10 +1,8 @@
 ---
 const pathname = Astro.url.pathname;
-// Remove any trailing slash to compare safely (except for root path)
 const currentPath = pathname === "/" ? pathname : pathname.replace(/\/$/, "");
 ---
 
-<!-- Header en haut (Desktop complet + Mobile juste Logo) -->
 <header
   id="main-header"
   class="fixed top-0 z-50 w-full transition-all duration-300 ease-in-out px-4 md:px-6 py-4 md:py-5 bg-transparent text-font-primary"
@@ -12,9 +10,7 @@ const currentPath = pathname === "/" ? pathname : pathname.replace(/\/$/, "");
   <div
     class="max-w-7xl mx-auto flex justify-between items-center gap-3 md:gap-0"
   >
-    <!-- Titre gauche / Logo -->
     <a href="/" class="flex items-center gap-2 md:gap-3 group">
-      <!-- Icône Pet -->
       <img
         src="/favicon.svg"
         alt="Logo PetSitter24"
