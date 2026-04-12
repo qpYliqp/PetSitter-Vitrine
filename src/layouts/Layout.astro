@@ -18,99 +18,100 @@ const {
 // Calcul de l'URL Canonique (Pour éviter le duplicate content Google)
 const canonicalURL = new URL(
   Astro.url.pathname,
-  "https://petsitter-vitrine.vercel.app" // Fallback robuste si Astro.site n'est pas défini (peut être remplacé par OVH plus tard)
+  "https://pet-sitter-dordogne.fr", // Fallback robuste si Astro.site n'est pas défini (peut être remplacé par OVH plus tard)
 );
-const baseUrl = "https://petsitter-vitrine.vercel.app";
+const baseUrl = "https://pet-sitter-dordogne.fr";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "AnimalShelter"],
   "@id": baseUrl + "/#business",
-  "name": "Au Bonheur Canin – Pet Sitter Dordogne",
-  "alternateName": "Gardiennage Chien Dordogne Mensignac",
-  "image": new URL("/illustrations/galerie-cover.jpg", baseUrl).href,
-  "url": baseUrl,
-  "telephone": "+33600000000", // A ADAPTER par l'utilisateur
-  "email": "sandrine.bonheur.canin@gmail.com",
-  "priceRange": "15€ - 20€",
-  "currenciesAccepted": "EUR",
-  "paymentAccepted": "Cash, Virement bancaire",
-  "openingHours": "Mo-Su 08:00-20:00",
-  "address": {
+  name: "Au Bonheur Canin – Pet Sitter Dordogne",
+  alternateName: "Gardiennage Chien Dordogne Mensignac",
+  image: new URL("/illustrations/galerie-cover.jpg", baseUrl).href,
+  url: baseUrl,
+  telephone: "+33600000000", // A ADAPTER par l'utilisateur
+  email: "sandrine.bonheur.canin@gmail.com",
+  priceRange: "15€ - 20€",
+  currenciesAccepted: "EUR",
+  paymentAccepted: "Cash, Virement bancaire",
+  openingHours: "Mo-Su 08:00-20:00",
+  address: {
     "@type": "PostalAddress",
-    "streetAddress": "Mensignac",
-    "addressLocality": "Mensignac",
-    "postalCode": "24520",
-    "addressRegion": "Dordogne",
-    "addressCountry": "FR"
+    streetAddress: "Mensignac",
+    addressLocality: "Mensignac",
+    postalCode: "24520",
+    addressRegion: "Dordogne",
+    addressCountry: "FR",
   },
-  "geo": {
+  geo: {
     "@type": "GeoCoordinates",
-    "latitude": 45.1931,
-    "longitude": 0.5615 // Coordonnées exactes de Mensignac, 24520
+    latitude: 45.1931,
+    longitude: 0.5615,
   },
-  "areaServed": [
-    { "@type": "City", "name": "Périgueux" },
-    { "@type": "City", "name": "Mensignac" },
-    { "@type": "AdministrativeArea", "name": "Dordogne" }
+  areaServed: [
+    { "@type": "City", name: "Périgueux" },
+    { "@type": "City", name: "Mensignac" },
+    { "@type": "AdministrativeArea", name: "Dordogne" },
   ],
-  "description": "Pet sitter certifiée ACACED en Dordogne. Au Bonheur Canin propose la pension canine, garderie de chiens et garde d'animaux à domicile à Mensignac près de Périgueux (24).",
-  "hasOfferCatalog": {
+  description:
+    "Pet sitter certifiée ACACED en Dordogne. Au Bonheur Canin propose la pension canine, garderie de chiens et garde d'animaux à domicile à Mensignac près de Périgueux (24).",
+  hasOfferCatalog: {
     "@type": "OfferCatalog",
-    "name": "Services de garde d'animaux et de gardiennage",
-    "itemListElement": [
+    name: "Services de garde d'animaux et de gardiennage",
+    itemListElement: [
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "Pension pour chien en Dordogne (Hébergement complet)",
-          "description": "Gardiennage de votre chien en maison familiale à Mensignac. Jardin clos, balades, pas de box."
+          name: "Pension pour chien en Dordogne (Hébergement complet)",
+          description:
+            "Gardiennage de votre chien en maison familiale à Mensignac. Jardin clos, balades, pas de box.",
         },
-        "price": "20.00",
-        "priceCurrency": "EUR",
-        "priceSpecification": {
+        price: "20.00",
+        priceCurrency: "EUR",
+        priceSpecification: {
           "@type": "UnitPriceSpecification",
-          "price": "20.00",
-          "priceCurrency": "EUR",
-          "unitText": "DAY"
-        }
+          price: "20.00",
+          priceCurrency: "EUR",
+          unitText: "DAY",
+        },
       },
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "Garderie pour chien (Journée)",
-          "description": "Garde de jour pour chiens à Mensignac."
+          name: "Garderie pour chien (Journée)",
+          description: "Garde de jour pour chiens à Mensignac.",
         },
-        "price": "15.00",
-        "priceCurrency": "EUR",
-        "priceSpecification": {
+        price: "15.00",
+        priceCurrency: "EUR",
+        priceSpecification: {
           "@type": "UnitPriceSpecification",
-          "price": "15.00",
-          "priceCurrency": "EUR",
-          "unitText": "DAY"
-        }
-      }
-    ]
+          price: "15.00",
+          priceCurrency: "EUR",
+          unitText: "DAY",
+        },
+      },
+    ],
   },
-  "sameAs": [
-    "https://www.facebook.com/profile.php?id=61580176229405#"
-  ],
-  "aggregateRating": {
+  sameAs: ["https://www.facebook.com/profile.php?id=61580176229405#"],
+  aggregateRating: {
     "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": "30",
-    "bestRating": "5",
-    "worstRating": "1"
-  }
+    ratingValue: "5",
+    reviewCount: "30",
+    bestRating: "5",
+    worstRating: "1",
+  },
 };
 
-const faqPageSchema = faqSchema ? {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqSchema
-} : null;
-
+const faqPageSchema = faqSchema
+  ? {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqSchema,
+    }
+  : null;
 ---
 
 <!doctype html>
@@ -125,7 +126,10 @@ const faqPageSchema = faqSchema ? {
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Sandrine – Au Bonheur Canin" />
-    <meta name="keywords" content="pet sitter dordogne, gardiennage chien dordogne, pension pour chien dordogne, garde animaux mensignac, pet sitter périgueux, garde de chien dordogne, pension canine 24520" />
+    <meta
+      name="keywords"
+      content="pet sitter dordogne, gardiennage chien dordogne, pension pour chien dordogne, garde animaux mensignac, pet sitter périgueux, garde de chien dordogne, pension canine 24520"
+    />
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Balises géographiques -->
@@ -139,30 +143,35 @@ const faqPageSchema = faqSchema ? {
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta
-      property="og:image"
-      content={new URL(image, baseUrl)}
-    />
+    <meta property="og:image" content={new URL(image, baseUrl)} />
     <meta property="og:locale" content="fr_FR" />
-    <meta property="og:site_name" content="Au Bonheur Canin – Pet Sitter Dordogne" />
+    <meta
+      property="og:site_name"
+      content="Au Bonheur Canin – Pet Sitter Dordogne"
+    />
 
     <!-- Balises Twitter Card -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta
-      property="twitter:image"
-      content={new URL(image, baseUrl)}
-    />
+    <meta property="twitter:image" content={new URL(image, baseUrl)} />
 
     <!-- Données Structurées pour le SEO Local Google (JSON-LD) -->
-    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}></script>
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(localBusinessSchema)}
+    />
 
     <!-- Données Structurées FAQ (JSON-LD) -->
-    {faqPageSchema && (
-      <script type="application/ld+json" set:html={JSON.stringify(faqPageSchema)}></script>
-    )}
+    {
+      faqPageSchema && (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(faqPageSchema)}
+        />
+      )
+    }
   </head>
   <body><slot /></body>
 </html>

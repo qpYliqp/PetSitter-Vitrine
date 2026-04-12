@@ -6,7 +6,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://petsitter-vitrine.vercel.app', // REMPLACER PAR LE VRAI DOMAINE
+  site: 'https://pet-sitter-dordogne.fr', // REMPLACER PAR LE VRAI DOMAINE
   vite: {
       plugins: [tailwindcss()],
   },
