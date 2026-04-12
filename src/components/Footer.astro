@@ -13,16 +13,25 @@ import ContactLink from "./shared/ContactLink.astro";
       class="flex flex-col lg:flex-row justify-between items-start gap-12 mb-12"
     >
       <div class="w-full lg:w-5/12 space-y-6">
+      <div class="w-full lg:w-5/12 space-y-6">
         <h3
           class="text-3xl font-bold text-white tracking-tight flex items-center gap-2"
         >
-          <span class="bg-third text-white px-2 py-1 rounded-lg">Pet</span>
-          <span class="text-third">Sitter 24</span>
+          <span class="bg-third text-white px-2 py-1 rounded-lg">Au</span>
+          <span class="text-third">Bonheur Canin</span>
         </h3>
         <p class="text-lg leading-relaxed text-slate-400 max-w-sm">
-          Si vous souhaitez plus d'informations, vous pouvez consulter mes
-          réseaux ci-dessous.
+          Pet sitter certifiée ACACED à Mensignac, en Dordogne (24).
+          Pour toute demande de garde, consultez mes réseaux ou contactez-moi par email/téléphone.
         </p>
+
+        <!-- NAP (Name, Address, Phone) pour le SEO local -->
+        <address class="not-italic text-slate-400 text-sm space-y-1 mt-4" itemprop="address" itemscope itemtype="https://schema.org/LocalBusiness">
+          <span itemprop="name" class="sr-only">Au Bonheur Canin – Pet Sitter Dordogne</span>
+          <p>📍 <span itemprop="addressLocality">Mensignac</span>, <span itemprop="addressRegion">Dordogne</span> <span itemprop="postalCode">(24520)</span></p>
+          <p>📞 <a href="tel:+33622073356" class="hover:text-third transition-colors" itemprop="telephone">06 22 07 33 56</a></p>
+          <p>✉️ <a href="mailto:sandrine.bonheur.canin@gmail.com" class="hover:text-third transition-colors" itemprop="email">sandrine.bonheur.canin@gmail.com</a></p>
+        </address>
 
         <div class="flex flex-col gap-4 pt-2">
           <ContactLink
@@ -39,7 +48,7 @@ import ContactLink from "./shared/ContactLink.astro";
       <div
         class="flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-500 font-medium"
       >
-        <p>© {new Date().getFullYear()} PetSitter24. Tous droits réservés.</p>
+        <p>© {new Date().getFullYear()} Au Bonheur Canin – Pet Sitter Dordogne. Tous droits réservés.</p>
         <p>SIRET : 10153412100013</p>
       </div>
     </div>

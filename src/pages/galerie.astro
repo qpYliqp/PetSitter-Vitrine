@@ -12,8 +12,8 @@ const tapeStyleTxt =
 ---
 
 <Layout
-  title="Galerie Photos & Souvenirs | Sandrine PetSitter Mensignac"
-  description="Découvrez notre somptueuse galerie de photos ! Que des chiens heureux et détendus profitant d'un grand jardin lors de leurs séjours de garde en Dordogne."
+  title="Galerie | Chiens Heureux en Pension Canine chez Sandrine (Dordogne)"
+  description="Découvrez notre galerie ! Que des chiens heureux et détendus profitant du grand jardin lors de leurs séjours chez votre pet sitter à Mensignac, en Dordogne."
 >
   <Header />
   <main class="min-h-screen pt-24 pb-20 relative overflow-hidden">
@@ -40,7 +40,15 @@ const tapeStyleTxt =
       <div
         class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 p-4 md:p-8 items-stretch justify-center relative max-w-6xl mx-auto mt-4"
       >
-        {photos.map((p) => <LargeVignette imageUrl={p.src} alt={p.alt} description={p.description} />)}
+        {
+          photos.map((p) => (
+            <LargeVignette
+              imageUrl={p.src}
+              alt={p.alt}
+              description={p.description}
+            />
+          ))
+        }
       </div>
     </div>
   </main>
